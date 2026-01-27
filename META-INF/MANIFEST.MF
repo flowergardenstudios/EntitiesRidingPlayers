@@ -1,3 +1,3 @@
 Manifest-Version: 1.0
-Main-Class: ru.nern.playerladder
+Main-Class: ru.nern.playerladder.PlayerLadder
 

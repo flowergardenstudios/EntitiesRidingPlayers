@@ -81,10 +81,11 @@ public class SharedHandler {
     }
 
     // If Player Crouches, Dismount:
-    // flowergardenstudios: disable crouching dismounting
     public static void onPlayerTick(Player player) {
-        if(!player.level().isClientSide && player.onGround() && player.isVehicle())
-            player.getFirstPassenger().stopRiding();
+        if (!player.level().isClientSide && player.onGround() && player.isVehicle() && player.isCrouching()) {
+            // flowergardenstudios: disable crouching dismounting
+            // player.getFirstPassenger().stopRiding();
+        }
     }
 
     public static void onLogOut(Player player) {
