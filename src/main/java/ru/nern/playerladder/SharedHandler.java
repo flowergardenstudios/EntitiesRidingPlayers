@@ -80,8 +80,10 @@ public class SharedHandler {
             ((ServerPlayer) vehicle).connection.send(new ClientboundSetPassengersPacket(vehicle));
     }
 
+    // If Player Crouches, Dismount:
+    // flowergardenstudios: disable crouching dismounting
     public static void onPlayerTick(Player player) {
-        if(!player.level().isClientSide && player.onGround() && player.isVehicle() && player.isCrouching())
+        if(!player.level().isClientSide && player.onGround() && player.isVehicle())
             player.getFirstPassenger().stopRiding();
     }
 
