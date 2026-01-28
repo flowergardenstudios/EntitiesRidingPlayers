@@ -80,9 +80,11 @@ public class SharedHandler {
             ((ServerPlayer) vehicle).connection.send(new ClientboundSetPassengersPacket(vehicle));
     }
 
+    // flowergardenstudios: Prevent Sneaking from Dismounting:
     public static void onPlayerTick(Player player) {
-        if(!player.level().isClientSide() && player.onGround() && player.isVehicle() && player.isCrouching())
-            player.getFirstPassenger().stopRiding();
+        if (!player.level().isClientSide() && player.onGround() && player.isVehicle() && player.isCrouching()) {
+            // player.getFirstPassenger().stopRiding();
+        }
     }
 
     public static void onLogOut(Player player) {
